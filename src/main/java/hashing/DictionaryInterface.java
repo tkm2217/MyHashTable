@@ -60,6 +60,4 @@ public interface DictionaryInterface<K, V> {
 
     /** Removes all entries from this dictionary. */
     public void clear();
-
-    V get(V key);
 } // end DictionaryInterface

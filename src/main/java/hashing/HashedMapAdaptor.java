@@ -106,12 +106,7 @@ public class HashedMapAdaptor<K,V> implements DictionaryInterface<K,V>,
     {
         myTable.clear();
     }
-
-    @Override
-    public V get(V key) {
-        return null;
-    }
-
+    
     // Use the equals method of the map.
     public boolean equals(Object other)
     {
