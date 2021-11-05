@@ -104,9 +104,9 @@ public class MisSpellActionThread implements Runnable {
             while (input.hasNextLine()) // Read until end of file
             {
 // ADD CODE HERE
-// >>>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        showLines(myLines);
-        myLines.nextLine();
+// >>>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                aWord = input.nextLine();
+                theDictionary.add(aWord, aWord);
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -128,8 +128,6 @@ public class MisSpellActionThread implements Runnable {
 
         // ADD CODE HERE
 //>>>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>        
-
-
 
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
