@@ -97,7 +97,6 @@ public class MisSpellActionThread implements Runnable {
         try {
             String inString;
             String aWord;
-
             input = new Scanner(new File(theFileName));
 
 
@@ -106,7 +105,10 @@ public class MisSpellActionThread implements Runnable {
 // ADD CODE HERE
 // >>>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 aWord = input.nextLine();
-                theDictionary.add(aWord, aWord);
+                theDictionary.getValue(aWord);
+                showLines(myLines);
+                checkWord(aWord, myDictionary);
+                myLines.nextLine();
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -128,8 +130,10 @@ public class MisSpellActionThread implements Runnable {
 
         // ADD CODE HERE
 //>>>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>        
-
-
+            if (theDictionary.contains(word))
+            {
+                result = true;
+            }
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
         return result;
