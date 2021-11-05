@@ -27,8 +27,8 @@ public class MisSpellActionThread implements Runnable {
         super();
 
         this.controller = controller;
-        textFileName = "src/main/resources/assignment/dictionary/check.txt";
-        dictionaryFileName = "src/main/resources/assignment/dictionary/sampleDictionary.txt";
+        textFileName = "src/main/resources/hashing/check.txt";
+        dictionaryFileName = "src/main/resources/hashing/sampleDictionary.txt";
 
         myDictionary = new HashedMapAdaptor<String, String>();
         myLines = new LinesToDisplay();
@@ -105,8 +105,8 @@ public class MisSpellActionThread implements Runnable {
             {
 // ADD CODE HERE
 // >>>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-
+        showLines(myLines);
+        myLines.nextLine();
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 

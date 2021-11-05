@@ -24,7 +24,7 @@ public class Dictionary extends Application {
         Parent root = (Parent) fxmlLoader.load();
         
         Scene scene = new Scene(root);
-        stage.getIcons().add(new Image("file:src/main/resources/assignment/dictionary/UNTIcon.png"));
+        stage.getIcons().add(new Image("file:src/main/resources/hashing/UNTIcon.png"));
         stage.setTitle("Spelling Checker (SampleApplication)");
         stage.setScene(scene);
         stage.show();
