@@ -106,13 +106,13 @@ public class MisSpellActionThread implements Runnable {
 // >>>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 inString = input.nextLine();
                 aWord = inString.split(" ");
-                for( var i = 0; i< aWord.length; i++){
+                for( int i = 0; i< aWord.length; i++){
                     Wordlet w = new Wordlet(aWord[i], checkWord(aWord[i], theDictionary));
                     myLines.addWordlet(w);
-
+                    showLines(myLines);
+                    myLines.nextLine();
                 }
-                showLines(myLines);
-                myLines.nextLine();
+
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
             }
         } catch (IOException e) {
