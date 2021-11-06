@@ -96,7 +96,7 @@ public class MisSpellActionThread implements Runnable {
         Scanner input;
         try {
             String inString;
-            String aWord;
+            String aWord = new String();
             input = new Scanner(new File(theFileName));
 
 
@@ -104,14 +104,16 @@ public class MisSpellActionThread implements Runnable {
             {
 // ADD CODE HERE
 // >>>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                aWord = input.nextLine();
-                theDictionary.getValue(aWord);
+
+                inString = input.nextLine();
+                for(inString.split("");;) {
+                    if (checkWord(aWord, myDictionary) == true) {
+                        new Wordlet(aWord, true);
+                    }
                 showLines(myLines);
-                checkWord(aWord, myDictionary);
-                myLines.nextLine();
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                }
 
-
+                //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
             }
 
         } catch (IOException e) {
