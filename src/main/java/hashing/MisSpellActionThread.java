@@ -96,7 +96,7 @@ public class MisSpellActionThread implements Runnable {
         Scanner input;
         try {
             String inString;
-            String aWord = new String();
+            Wordlet aWord;
             input = new Scanner(new File(theFileName));
 
 
@@ -104,13 +104,13 @@ public class MisSpellActionThread implements Runnable {
             {
 // ADD CODE HERE
 // >>>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
                 inString = input.nextLine();
-                for(inString.split("");;) {
-                    if (checkWord(aWord, myDictionary) == true) {
-                        new Wordlet(aWord, true);
-                    }
-                showLines(myLines);
+                for(inString.split(" ");;) {
+                    checkWord(inString, myDictionary);
+                   aWord = new Wordlet(inString, true);
+                        myLines.addWordlet(aWord);
+                        showLines(myLines);
+                        myLines.nextLine();
                 }
 
                 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -122,6 +122,8 @@ public class MisSpellActionThread implements Runnable {
         }
 
     }
+
+
 
     /**
      * Check the spelling of a single word.
