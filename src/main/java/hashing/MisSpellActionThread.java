@@ -96,7 +96,7 @@ public class MisSpellActionThread implements Runnable {
         Scanner input;
         try {
             String inString;
-            String aWord;
+            String[] aWord;
             input = new Scanner(new File(theFileName));
 
 
@@ -105,40 +105,33 @@ public class MisSpellActionThread implements Runnable {
 // ADD CODE HERE
 // >>>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 inString = input.nextLine();
-                inString.split("");
-                    Wordlet w = new Wordlet(inString, checkWord(inString, theDictionary));
+                aWord = inString.split(" ");
+                for( var i = 0; i< aWord.length; i++){
+                    Wordlet w = new Wordlet(aWord[i], checkWord(aWord[i], theDictionary));
                     myLines.addWordlet(w);
                     showLines(myLines);
                     myLines.nextLine();
-
-
-                //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                }
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
             }
-
         } catch (IOException e) {
             System.out.println("There was an error in reading or opening the file: " + theFileName);
             System.out.println(e.getMessage());
         }
 
     }
-
-
-
     /**
      * Check the spelling of a single word.
      *
      */
     public boolean checkWord(String word, DictionaryInterface<String, String> theDictionary) {
-        boolean result;
+        boolean result = false;
 
         // ADD CODE HERE
 //>>>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>        
             if (theDictionary.contains(word))
             {
                 result = true;
-            }
-            else{
-                result = false;
             }
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
